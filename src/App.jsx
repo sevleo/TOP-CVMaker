@@ -8,7 +8,7 @@ function App() {
     role: "",
     phone: "",
     email: "",
-    location: "",
+    // location: "",
     linkedin: "",
     github: "",
   });

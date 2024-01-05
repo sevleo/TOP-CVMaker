@@ -1,0 +1,73 @@
+.contact-section {
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 5px;
+}
+
+.contact-section:hover {
+  outline: 0.5px solid black;
+}
+
+label:hover {
+  cursor: text;
+}
+
+label:hover > input {
+  /* border-bottom: 0.5px solid black; */
+  /* border-radius: 10px; */
+}
+
+label.name {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  font-size: 20px;
+}
+
+label.name > input,
+label.name > input::placeholder {
+  font-size: 30px;
+}
+
+label.role {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+label.role > input,
+label.role > input::placeholder {
+  font-size: 20px;
+}
+
+label.phone {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+label.email {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+label.location {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+
+label.linkedin {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+label.github {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+.contact-section label > input {
+  display: flex;
+  justify-content: start;
+  padding: 5px;
+}

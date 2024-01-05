@@ -1,6 +1,7 @@
 import { useState } from "react";
+import "../styles/Input.css";
 
-export default function Input({ label, placeholder, onChange }) {
+export default function Input({ label, placeholder, onChange, className }) {
   const [value, setValue] = useState("");
 
   function handleChnage(e) {
@@ -8,7 +9,7 @@ export default function Input({ label, placeholder, onChange }) {
     onChange(e.target.value);
   }
   return (
-    <label>
+    <label className={className}>
       {label}{" "}
       <input
         value={value}
