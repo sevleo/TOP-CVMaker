@@ -6,25 +6,25 @@ export default function ContactSection({ onProfileChange }) {
     <>
       <div className="contact-section">
         <Input
-          label=""
+          label='e.g. "John Doe"'
           placeholder="Name"
           onChange={(value) => onProfileChange("name", value)}
           className="name"
         />
         <Input
-          label=""
+          label='e.g. "Software Developer"'
           placeholder="Role"
           onChange={(value) => onProfileChange("role", value)}
           className="role"
         />
         <Input
-          label=""
+          label="Your phone"
           placeholder="Phone"
           onChange={(value) => onProfileChange("phone", value)}
           className="phone"
         />
         <Input
-          label=""
+          label='e.g. "example@gmail.com"'
           placeholder="Email"
           onChange={(value) => onProfileChange("email", value)}
           className="email"
@@ -36,13 +36,13 @@ export default function ContactSection({ onProfileChange }) {
           className="location"
         /> */}
         <Input
-          label=""
+          label="Link to your LinkedIn"
           placeholder="LinkedIn"
           onChange={(value) => onProfileChange("linkedin", value)}
           className="linkedin"
         />
         <Input
-          label=""
+          label="Link to your GitHub"
           placeholder="GitHub"
           onChange={(value) => onProfileChange("github", value)}
           className="github"

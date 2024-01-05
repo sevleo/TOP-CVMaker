@@ -9,13 +9,13 @@ export default function Input({ label, placeholder, onChange, className }) {
     onChange(e.target.value);
   }
   return (
-    <label className={className}>
-      {label}{" "}
+    <div className={className}>
       <input
         value={value}
         placeholder={placeholder}
         onChange={handleChnage}
       ></input>
-    </label>
+      <label>{label} </label>
+    </div>
   );
 }
