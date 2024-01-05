@@ -1,0 +1,21 @@
+.summary-section {
+  padding: 10px;
+  border-radius: 10px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-self: center;
+  height: 600px;
+}
+
+.summary-section div {
+  border-radius: 5px;
+}
+
+.summary-section p {
+  font-weight: 500;
+  text-align: start;
+  padding: 5px;
+  margin: 0;
+}
