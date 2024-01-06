@@ -1,7 +1,7 @@
 import Input from "./Input";
 import "../styles/SummarySection.css";
 
-export default function Summary({ onFieldChange }) {
+export default function Summary({ onFieldChange, summary }) {
   return (
     <div className="summary-section">
       <p>Professional Summary</p>
@@ -12,6 +12,7 @@ export default function Summary({ onFieldChange }) {
         type="textarea"
         rows="4"
         maxlength="300"
+        value={summary}
         onChange={(value) => {
           onFieldChange("summary", value);
         }}

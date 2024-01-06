@@ -9,16 +9,17 @@ export default function Input({
   type,
   rows,
   maxlength,
+  value,
 }) {
-  const [value, setValue] = useState("");
+  const [fieldValue, setFieldValue] = useState(value);
 
   function handleInputChange(e) {
-    setValue(e.target.value);
+    setFieldValue(e.target.value);
     onChange(e.target.value);
   }
 
   function handleTextAreaChange(e) {
-    setValue(e.target.value);
+    setFieldValue(e.target.value);
     onChange(e.target.value);
     const textarea = document.querySelector(".summary textarea");
     textarea.style.height = `${textarea.scrollHeight - 10}px`;
@@ -28,7 +29,7 @@ export default function Input({
     return (
       <div className={className}>
         <textarea
-          value={value}
+          value={fieldValue}
           placeholder={placeholder}
           onChange={handleTextAreaChange}
           rows={rows}
@@ -42,7 +43,7 @@ export default function Input({
     <div className={className}>
       <input
         type={type || "text"}
-        value={value}
+        value={fieldValue}
         placeholder={placeholder}
         onChange={handleInputChange}
       ></input>
