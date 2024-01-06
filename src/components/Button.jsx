@@ -1,4 +1,4 @@
-export default function AddButton({ label, className, onClick }) {
+export default function Button({ label, className, onClick }) {
   function handleButtonClick() {
     onClick();
   }

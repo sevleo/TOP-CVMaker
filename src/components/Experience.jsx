@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Input from "./Input";
-import AddButton from "./AddButton";
+import Button from "./Button";
 import "../styles/Experience.css";
 
 export default function Experience() {
@@ -27,6 +27,11 @@ export default function Experience() {
       responsibilities: "",
     };
     setExperiences([...experiences, newExperience]);
+  }
+
+  function removeExperience(experience) {
+    const updatedExperiences = experiences.filter((exp) => exp !== experience);
+    setExperiences(updatedExperiences);
   }
 
   function onExperienceChange(index, fieldName, value) {
@@ -85,10 +90,15 @@ export default function Experience() {
               onExperienceChange(index, "responsibilities", value)
             }
           />
+          <Button
+            label="Remove"
+            className="remove-experience"
+            onClick={() => removeExperience(experience)}
+          />
         </div>
       ))}
-      <AddButton
-        label="test"
+      <Button
+        label="Add experience"
         className="add-experience"
         onClick={addExperience}
       />
