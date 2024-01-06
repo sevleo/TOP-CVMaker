@@ -5,10 +5,23 @@ import "../styles/ExperienceSection.css";
 
 export default function ExperienceSection({
   experiences,
-  addExperience,
+  addItem,
   removeExperience,
   onExperienceChange,
 }) {
+  function addExperience() {
+    const newExperience = {
+      id: Math.random(),
+      title: "",
+      company: "",
+      from: "",
+      to: "",
+      location: "",
+      responsibilities: "",
+    };
+    addItem("experiences", newExperience);
+  }
+
   return (
     <div className="experience-section">
       <p>Job Experience</p>
@@ -64,7 +77,7 @@ export default function ExperienceSection({
             label="Remove"
             className="remove-experience"
             onClick={() => {
-              removeExperience(experience);
+              removeExperience("experiences", experience);
             }}
           />
         </div>
@@ -72,7 +85,9 @@ export default function ExperienceSection({
       <Button
         label="Add experience"
         className="add-experience"
-        onClick={addExperience}
+        onClick={() => {
+          addExperience();
+        }}
       />
     </div>
   );

@@ -38,30 +38,19 @@ function App() {
     console.log(profile);
   };
 
-  const addExperience = () => {
-    const newExperience = {
-      id: Math.random(),
-      title: "",
-      company: "",
-      from: "",
-      to: "",
-      location: "",
-      responsibilities: "",
-    };
+  const addItem = (arrayName, newItem) => {
     const updatedProfile = {
       ...profile,
-      experiences: [...profile.experiences, newExperience],
+      [arrayName]: [...profile[arrayName], newItem],
     };
     setProfile(updatedProfile);
   };
 
-  const removeExperience = (experience) => {
-    const updatedExperiences = profile.experiences.filter(
-      (exp) => exp.id !== experience.id
-    );
+  const removeExperience = (arrayName, item) => {
+    const updatedItems = profile[arrayName].filter((i) => i.id !== item.id);
     const updatedProfile = {
       ...profile,
-      experiences: updatedExperiences,
+      [arrayName]: updatedItems,
     };
     setProfile(updatedProfile);
   };
@@ -81,7 +70,7 @@ function App() {
         <div className="linebreak"></div>
         <ExperienceSection
           experiences={profile.experiences}
-          addExperience={addExperience}
+          addItem={addItem}
           removeExperience={removeExperience}
           onExperienceChange={handleExperienceChange}
         />
