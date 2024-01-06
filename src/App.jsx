@@ -2,8 +2,8 @@ import { useState } from "react";
 import ContactSection from "./components/ContactSection";
 import "./App.css";
 import Summary from "./components/Summary";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
+import ExperienceSection from "./components/ExperienceSection";
+import EducationSection from "./components/EducationSection";
 
 function App() {
   const [profile, setProfile] = useState({
@@ -14,6 +14,8 @@ function App() {
     linkedin: "",
     github: "",
     summary: "",
+    experiences: [],
+    educations: [],
   });
 
   const handleProfileChange = (field, value) => {
@@ -24,24 +26,16 @@ function App() {
     console.log(profile);
   };
 
-  const handleSummaryChange = (value) => {
-    setProfile((prevProfile) => ({
-      ...prevProfile,
-      summary: value,
-    }));
-    console.log(profile);
-  };
-
   return (
     <>
       <main>
         <ContactSection onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
-        <Summary onProfileChange={handleSummaryChange} />
+        <Summary onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
-        <Experience />
+        <ExperienceSection onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
-        <Education />
+        <EducationSection onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
       </main>
     </>

@@ -3,7 +3,7 @@ import Input from "./Input";
 import Button from "./Button";
 import "../styles/Experience.css";
 
-export default function Experience() {
+export default function ExperienceSection({ onProfileChange }) {
   const [experiences, setExperiences] = useState([
     {
       id: Math.random(),
@@ -26,18 +26,22 @@ export default function Experience() {
       location: "",
       responsibilities: "",
     };
-    setExperiences([...experiences, newExperience]);
+    const updatedExperiences = [...experiences, newExperience];
+    setExperiences(updatedExperiences);
+    onProfileChange("experiences", updatedExperiences);
   }
 
   function removeExperience(experience) {
     const updatedExperiences = experiences.filter((exp) => exp !== experience);
     setExperiences(updatedExperiences);
+    onProfileChange("experiences", updatedExperiences);
   }
 
   function onExperienceChange(index, fieldName, value) {
     const updatedExperiences = [...experiences];
     updatedExperiences[index][fieldName] = value;
     setExperiences(updatedExperiences);
+    onProfileChange("experiences", updatedExperiences);
   }
 
   return (

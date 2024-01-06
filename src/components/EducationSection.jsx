@@ -3,7 +3,7 @@ import Input from "./Input";
 import Button from "./Button";
 import "../styles/Education.css";
 
-export default function Education() {
+export default function EducationSection({ onProfileChange }) {
   const [educations, setEducations] = useState([
     {
       id: Math.random(),
@@ -26,17 +26,20 @@ export default function Education() {
     };
     const updatedEducations = [...educations, newEducation];
     setEducations(updatedEducations);
+    onProfileChange("educations", updatedEducations);
   }
 
   function removeEducation(education) {
     const updatedEducations = educations.filter((edu) => edu !== education);
     setEducations(updatedEducations);
+    onProfileChange("educations", updatedEducations);
   }
 
   function onEducationChange(index, field, value) {
     const updatedEducations = [...educations];
     updatedEducations[index][field] = value;
     setEducations(updatedEducations);
+    onProfileChange("educations", updatedEducations);
   }
 
   return (

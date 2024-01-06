@@ -13,7 +13,7 @@ export default function Summary({ onProfileChange }) {
         rows="4"
         maxlength="300"
         onChange={(value) => {
-          onProfileChange(value);
+          onProfileChange("summary", value);
         }}
       />
     </div>
