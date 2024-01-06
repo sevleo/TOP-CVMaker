@@ -5,6 +5,7 @@ import Summary from "./components/Summary";
 import ExperienceSection from "./components/ExperienceSection";
 import EducationSection from "./components/EducationSection";
 import SkillsSection from "./components/SkillsSection";
+import LanguagesSection from "./components/LanguagesSection";
 
 function App() {
   const [profile, setProfile] = useState({
@@ -37,6 +38,12 @@ function App() {
       },
     ],
     skills: [
+      {
+        id: Math.random(),
+        name: "",
+      },
+    ],
+    languages: [
       {
         id: Math.random(),
         name: "",
@@ -103,6 +110,12 @@ function App() {
           onChange={handleListChange}
         />
         <div className="linebreak"></div>
+        <LanguagesSection
+          languages={profile.languages}
+          addItem={addItem}
+          removeItem={removeItem}
+          onChange={handleListChange}
+        />
       </main>
     </>
   );
