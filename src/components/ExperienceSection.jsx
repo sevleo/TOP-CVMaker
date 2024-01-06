@@ -7,15 +7,8 @@ export default function ExperienceSection({
   experiences,
   addExperience,
   removeExperience,
-  onProfileChange,
+  onExperienceChange,
 }) {
-  function onExperienceChange(index, fieldName, value) {
-    const updatedExperiences = [...experiences];
-    updatedExperiences[index][fieldName] = value;
-    setExperiences(updatedExperiences);
-    onProfileChange("experiences", updatedExperiences);
-  }
-
   return (
     <div className="experience-section">
       <p>Job Experience</p>

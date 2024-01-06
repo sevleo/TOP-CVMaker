@@ -30,6 +30,14 @@ function App() {
     skills: [],
   });
 
+  const handleProfileChange = (field, value) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      [field]: value,
+    }));
+    console.log(profile);
+  };
+
   const addExperience = () => {
     const newExperience = {
       id: Math.random(),
@@ -58,13 +66,11 @@ function App() {
     setProfile(updatedProfile);
   };
 
-  const handleProfileChange = (field, value) => {
-    setProfile((prevProfile) => ({
-      ...prevProfile,
-      [field]: value,
-    }));
-    console.log(profile);
-  };
+  function handleExperienceChange(index, fieldName, value) {
+    const updatedExperiences = [...profile.experiences];
+    updatedExperiences[index][fieldName] = value;
+    handleProfileChange("experiences", updatedExperiences);
+  }
 
   return (
     <>
@@ -77,7 +83,7 @@ function App() {
           experiences={profile.experiences}
           addExperience={addExperience}
           removeExperience={removeExperience}
-          onProfileChange={handleProfileChange}
+          onExperienceChange={handleExperienceChange}
         />
         <div className="linebreak"></div>
         <EducationSection onProfileChange={handleProfileChange} />
