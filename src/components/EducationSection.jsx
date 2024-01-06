@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import "../styles/EducationSection.css";

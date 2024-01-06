@@ -36,7 +36,12 @@ function App() {
         location: "",
       },
     ],
-    skills: [],
+    skills: [
+      {
+        id: Math.random(),
+        name: "",
+      },
+    ],
   });
 
   const handleFieldChange = (field, value) => {
