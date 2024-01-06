@@ -2,6 +2,7 @@ import { useState } from "react";
 import ContactSection from "./components/ContactSection";
 import "./App.css";
 import Summary from "./components/Summary";
+import Experience from "./components/Experience";
 
 function App() {
   const [profile, setProfile] = useState({
@@ -27,6 +28,8 @@ function App() {
         <ContactSection onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
         <Summary />
+        <div className="linebreak"></div>
+        <Experience />
       </main>
     </>
   );
