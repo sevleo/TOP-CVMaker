@@ -1,7 +1,7 @@
 import Input from "./Input";
 import "../styles/SummarySection.css";
 
-export default function Summary({ onProfileChange }) {
+export default function Summary({ onFieldChange }) {
   return (
     <div className="summary-section">
       <p>Professional Summary</p>
@@ -13,7 +13,7 @@ export default function Summary({ onProfileChange }) {
         rows="4"
         maxlength="300"
         onChange={(value) => {
-          onProfileChange("summary", value);
+          onFieldChange("summary", value);
         }}
       />
     </div>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import "../styles/ExperienceSection.css";
@@ -6,8 +5,8 @@ import "../styles/ExperienceSection.css";
 export default function ExperienceSection({
   experiences,
   addItem,
-  removeExperience,
-  onExperienceChange,
+  removeItem,
+  onChange,
 }) {
   function addExperience() {
     const newExperience = {
@@ -32,14 +31,16 @@ export default function ExperienceSection({
             placeholder="Title"
             className="experience title"
             value={experience.title}
-            onChange={(value) => onExperienceChange(index, "title", value)}
+            onChange={(value) => onChange(index, "title", value, "experiences")}
           />
           <Input
             label="Company"
             placeholder="Company"
             className="experience company"
             value={experience.company}
-            onChange={(value) => onExperienceChange(index, "company", value)}
+            onChange={(value) =>
+              onChange(index, "company", value, "experiences")
+            }
           />
           <Input
             label="From"
@@ -47,7 +48,7 @@ export default function ExperienceSection({
             className="experience from"
             type="date"
             value={experience.from}
-            onChange={(value) => onExperienceChange(index, "from", value)}
+            onChange={(value) => onChange(index, "from", value, "experiences")}
           />
           <Input
             label="To"
@@ -55,14 +56,16 @@ export default function ExperienceSection({
             className="experience to"
             type="date"
             value={experience.to}
-            onChange={(value) => onExperienceChange(index, "to", value)}
+            onChange={(value) => onChange(index, "to", value, "experiences")}
           />
           <Input
             label="Location"
             placeholder="Location"
             className="experience location"
             value={experience.location}
-            onChange={(value) => onExperienceChange(index, "location", value)}
+            onChange={(value) =>
+              onChange(index, "location", value, "experiences")
+            }
           />
           <Input
             label="Responsibilities"
@@ -70,14 +73,14 @@ export default function ExperienceSection({
             className="experience responsibilities"
             value={experience.responsibilities}
             onChange={(value) =>
-              onExperienceChange(index, "responsibilities", value)
+              onChange(index, "responsibilities", value, "experiences")
             }
           />
           <Button
             label="Remove"
             className="remove-experience"
             onClick={() => {
-              removeExperience("experiences", experience);
+              removeItem("experiences", experience);
             }}
           />
         </div>

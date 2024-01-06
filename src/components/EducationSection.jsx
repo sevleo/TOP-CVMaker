@@ -3,18 +3,12 @@ import Input from "./Input";
 import Button from "./Button";
 import "../styles/EducationSection.css";
 
-export default function EducationSection({ onProfileChange }) {
-  const [educations, setEducations] = useState([
-    {
-      id: Math.random(),
-      degree: "",
-      school: "",
-      from: "",
-      to: "",
-      location: "",
-    },
-  ]);
-
+export default function EducationSection({
+  educations,
+  addItem,
+  removeItem,
+  onChange,
+}) {
   function addEducation() {
     const newEducation = {
       id: Math.random(),
@@ -24,22 +18,7 @@ export default function EducationSection({ onProfileChange }) {
       to: "",
       location: "",
     };
-    const updatedEducations = [...educations, newEducation];
-    setEducations(updatedEducations);
-    onProfileChange("educations", updatedEducations);
-  }
-
-  function removeEducation(education) {
-    const updatedEducations = educations.filter((edu) => edu !== education);
-    setEducations(updatedEducations);
-    onProfileChange("educations", updatedEducations);
-  }
-
-  function onEducationChange(index, field, value) {
-    const updatedEducations = [...educations];
-    updatedEducations[index][field] = value;
-    setEducations(updatedEducations);
-    onProfileChange("educations", updatedEducations);
+    addItem("educations", newEducation);
   }
 
   return (
@@ -53,14 +32,14 @@ export default function EducationSection({ onProfileChange }) {
             placeholder="Degree"
             className="education degree"
             value={education.degree}
-            onChange={(value) => onEducationChange(index, "degree", value)}
+            onChange={(value) => onChange(index, "degree", value, "educations")}
           />
           <Input
             label="School"
             placeholder="School"
             className="education school"
             value={education.school}
-            onChange={(value) => onEducationChange(index, "school", value)}
+            onChange={(value) => onChange(index, "school", value, "educations")}
           />
           <Input
             label="From"
@@ -68,7 +47,7 @@ export default function EducationSection({ onProfileChange }) {
             className="education from"
             type="date"
             value={education.from}
-            onChange={(value) => onEducationChange(index, "from", value)}
+            onChange={(value) => onChange(index, "from", value, "educations")}
           />
           <Input
             label="To"
@@ -76,18 +55,20 @@ export default function EducationSection({ onProfileChange }) {
             className="education to"
             type="date"
             value={education.to}
-            onChange={(value) => onEducationChange(index, "to", value)}
+            onChange={(value) => onChange(index, "to", value, "educations")}
           />
           <Input
             label="Location"
             placeholder="Location"
             className="education location"
             value={education.location}
-            onChange={(value) => onEducationChange(index, "location", value)}
+            onChange={(value) =>
+              onChange(index, "location", value, "educations")
+            }
           />
           <Button
             className="remove-education"
-            onClick={() => removeEducation(education)}
+            onClick={() => removeItem("educations", education)}
             label="Remove"
           />
         </div>
@@ -96,7 +77,9 @@ export default function EducationSection({ onProfileChange }) {
       <Button
         label="Add education"
         className="add-education"
-        onClick={addEducation}
+        onClick={() => {
+          addEducation();
+        }}
       />
     </div>
   );

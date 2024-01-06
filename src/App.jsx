@@ -26,17 +26,32 @@ function App() {
         responsibilities: "",
       },
     ],
-    educations: [],
+    educations: [
+      {
+        id: Math.random(),
+        degree: "",
+        school: "",
+        from: "",
+        to: "",
+        location: "",
+      },
+    ],
     skills: [],
   });
 
-  const handleProfileChange = (field, value) => {
+  const handleFieldChange = (field, value) => {
     setProfile((prevProfile) => ({
       ...prevProfile,
       [field]: value,
     }));
     console.log(profile);
   };
+
+  function handleListChange(index, fieldName, value, arrayName) {
+    const updatedExperiences = [...profile[arrayName]];
+    updatedExperiences[index][fieldName] = value;
+    handleFieldChange(arrayName, updatedExperiences);
+  }
 
   const addItem = (arrayName, newItem) => {
     const updatedProfile = {
@@ -46,7 +61,7 @@ function App() {
     setProfile(updatedProfile);
   };
 
-  const removeExperience = (arrayName, item) => {
+  const removeItem = (arrayName, item) => {
     const updatedItems = profile[arrayName].filter((i) => i.id !== item.id);
     const updatedProfile = {
       ...profile,
@@ -55,29 +70,33 @@ function App() {
     setProfile(updatedProfile);
   };
 
-  function handleExperienceChange(index, fieldName, value) {
-    const updatedExperiences = [...profile.experiences];
-    updatedExperiences[index][fieldName] = value;
-    handleProfileChange("experiences", updatedExperiences);
-  }
-
   return (
     <>
       <main>
-        <ContactSection onProfileChange={handleProfileChange} />
+        <ContactSection onFieldChange={handleFieldChange} />
         <div className="linebreak"></div>
-        <Summary onProfileChange={handleProfileChange} />
+        <Summary onFieldChange={handleFieldChange} />
         <div className="linebreak"></div>
         <ExperienceSection
           experiences={profile.experiences}
           addItem={addItem}
-          removeExperience={removeExperience}
-          onExperienceChange={handleExperienceChange}
+          removeItem={removeItem}
+          onChange={handleListChange}
         />
         <div className="linebreak"></div>
-        <EducationSection onProfileChange={handleProfileChange} />
+        <EducationSection
+          educations={profile.educations}
+          addItem={addItem}
+          removeItem={removeItem}
+          onChange={handleListChange}
+        />
         <div className="linebreak"></div>
-        <SkillsSection onProfileChange={handleProfileChange} />
+        <SkillsSection
+          skills={profile.skills}
+          addItem={addItem}
+          removeItem={removeItem}
+          onChange={handleListChange}
+        />
         <div className="linebreak"></div>
       </main>
     </>
