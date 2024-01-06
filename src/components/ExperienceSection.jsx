@@ -1,42 +1,14 @@
 import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
-import "../styles/Experience.css";
+import "../styles/ExperienceSection.css";
 
-export default function ExperienceSection({ onProfileChange }) {
-  const [experiences, setExperiences] = useState([
-    {
-      id: Math.random(),
-      title: "",
-      company: "",
-      from: "",
-      to: "",
-      location: "",
-      responsibilities: "",
-    },
-  ]);
-
-  function addExperience() {
-    const newExperience = {
-      id: Math.random(),
-      title: "",
-      company: "",
-      from: "",
-      to: "",
-      location: "",
-      responsibilities: "",
-    };
-    const updatedExperiences = [...experiences, newExperience];
-    setExperiences(updatedExperiences);
-    onProfileChange("experiences", updatedExperiences);
-  }
-
-  function removeExperience(experience) {
-    const updatedExperiences = experiences.filter((exp) => exp !== experience);
-    setExperiences(updatedExperiences);
-    onProfileChange("experiences", updatedExperiences);
-  }
-
+export default function ExperienceSection({
+  experiences,
+  addExperience,
+  removeExperience,
+  onProfileChange,
+}) {
   function onExperienceChange(index, fieldName, value) {
     const updatedExperiences = [...experiences];
     updatedExperiences[index][fieldName] = value;
@@ -98,7 +70,9 @@ export default function ExperienceSection({ onProfileChange }) {
           <Button
             label="Remove"
             className="remove-experience"
-            onClick={() => removeExperience(experience)}
+            onClick={() => {
+              removeExperience(experience);
+            }}
           />
         </div>
       ))}

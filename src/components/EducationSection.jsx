@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
-import "../styles/Education.css";
+import "../styles/EducationSection.css";
 
 export default function EducationSection({ onProfileChange }) {
   const [educations, setEducations] = useState([

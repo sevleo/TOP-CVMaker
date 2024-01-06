@@ -4,6 +4,7 @@ import "./App.css";
 import Summary from "./components/Summary";
 import ExperienceSection from "./components/ExperienceSection";
 import EducationSection from "./components/EducationSection";
+import SkillsSection from "./components/SkillsSection";
 
 function App() {
   const [profile, setProfile] = useState({
@@ -14,9 +15,48 @@ function App() {
     linkedin: "",
     github: "",
     summary: "",
-    experiences: [],
+    experiences: [
+      {
+        id: Math.random(),
+        title: "",
+        company: "",
+        from: "",
+        to: "",
+        location: "",
+        responsibilities: "",
+      },
+    ],
     educations: [],
+    skills: [],
   });
+
+  const addExperience = () => {
+    const newExperience = {
+      id: Math.random(),
+      title: "",
+      company: "",
+      from: "",
+      to: "",
+      location: "",
+      responsibilities: "",
+    };
+    const updatedProfile = {
+      ...profile,
+      experiences: [...profile.experiences, newExperience],
+    };
+    setProfile(updatedProfile);
+  };
+
+  const removeExperience = (experience) => {
+    const updatedExperiences = profile.experiences.filter(
+      (exp) => exp.id !== experience.id
+    );
+    const updatedProfile = {
+      ...profile,
+      experiences: updatedExperiences,
+    };
+    setProfile(updatedProfile);
+  };
 
   const handleProfileChange = (field, value) => {
     setProfile((prevProfile) => ({
@@ -33,9 +73,16 @@ function App() {
         <div className="linebreak"></div>
         <Summary onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
-        <ExperienceSection onProfileChange={handleProfileChange} />
+        <ExperienceSection
+          experiences={profile.experiences}
+          addExperience={addExperience}
+          removeExperience={removeExperience}
+          onProfileChange={handleProfileChange}
+        />
         <div className="linebreak"></div>
         <EducationSection onProfileChange={handleProfileChange} />
+        <div className="linebreak"></div>
+        <SkillsSection onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
       </main>
     </>
