@@ -13,6 +13,7 @@ function App() {
     email: "",
     linkedin: "",
     github: "",
+    summary: "",
   });
 
   const handleProfileChange = (field, value) => {
@@ -20,7 +21,15 @@ function App() {
       ...prevProfile,
       [field]: value,
     }));
-    // console.log(profile);
+    console.log(profile);
+  };
+
+  const handleSummaryChange = (value) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      summary: value,
+    }));
+    console.log(profile);
   };
 
   return (
@@ -28,7 +37,7 @@ function App() {
       <main>
         <ContactSection onProfileChange={handleProfileChange} />
         <div className="linebreak"></div>
-        <Summary />
+        <Summary onProfileChange={handleSummaryChange} />
         <div className="linebreak"></div>
         <Experience />
         <div className="linebreak"></div>

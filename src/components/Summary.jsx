@@ -1,7 +1,7 @@
 import Input from "./Input";
 import "../styles/SummarySection.css";
 
-export default function Summary() {
+export default function Summary({ onProfileChange }) {
   return (
     <div className="summary-section">
       <p>Professional Summary</p>
@@ -12,6 +12,9 @@ export default function Summary() {
         type="textarea"
         rows="4"
         maxlength="300"
+        onChange={(value) => {
+          onProfileChange(value);
+        }}
       />
     </div>
   );
