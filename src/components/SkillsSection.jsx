@@ -19,24 +19,27 @@ export default function SkillsSection({
   return (
     <div className="skill-section">
       <p>04 Skills</p>
-      {skills.map((skill, index) => (
-        <div key={skill.id} className="skill">
-          <Input
-            label="Skill"
-            placeholder="Skill"
-            className="skill name"
-            value={skill.name}
-            onChange={(value) => onChange(index, "name", value, "skills")}
-          />
-          <Button
-            label="Remove"
-            className="remove-skill"
-            onClick={() => {
-              removeItem("skills", skill);
-            }}
-          />
-        </div>
-      ))}
+      <div className="skills">
+        {skills.map((skill, index) => (
+          <div key={skill.id} className="skill">
+            <Input
+              label="Skill"
+              placeholder="Skill"
+              className="skill-name"
+              value={skill.name}
+              onChange={(value) => onChange(index, "name", value, "skills")}
+            />
+            <Button
+              label="o"
+              className="remove-skill"
+              smallButton="true"
+              onClick={() => {
+                removeItem("skills", skill);
+              }}
+            />
+          </div>
+        ))}
+      </div>
       <Button
         label="Add skill"
         className="add-skill"

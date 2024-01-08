@@ -16,6 +16,13 @@ export default function Input({
   function handleInputChange(e) {
     setFieldValue(e.target.value);
     onChange(e.target.value);
+    // console.log(e);
+    // if (
+    //   (e.target.parentElement.className === "skill-name") &
+    //   (e.target.value.length > 21)
+    // ) {
+    //   e.target.style.width = e.target.value.length + "ch";
+    // }
   }
 
   function handleTextAreaChange(e) {

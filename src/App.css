@@ -56,7 +56,6 @@ div.linebreak {
 
 .remove-experience,
 .remove-education,
-.remove-skill,
 .remove-language {
   position: absolute;
   right: 5px;
@@ -68,6 +67,21 @@ div.linebreak {
   justify-content: center;
   text-align: center;
   width: 90px;
+}
+
+.remove-skill {
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  height: 10px;
+  width: 10px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .experience-section:not(:hover) .remove-experience,
@@ -118,14 +132,14 @@ div.linebreak {
   transition: opacity 0.3s;
 }
 
-main .remove-experience:focus,
-main .remove-education:focus,
-main .remove-skill:focus,
-main .remove-language:focus,
-main .add-experience:focus,
-main .add-education:focus,
-main .add-skill:focus,
-main .add-language:focus {
+main .experience .remove-experience:focus,
+main .education .remove-education:focus,
+main .skill .remove-skill:focus,
+main .language .remove-language:focus,
+main .experience .add-experience:focus,
+main .education .add-education:focus,
+main .skill .add-skill:focus,
+main .language .add-language:focus {
   opacity: 1;
   transition: opacity 0.3s;
 }
