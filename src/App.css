@@ -70,26 +70,50 @@ div.linebreak {
   width: 90px;
 }
 
-main:not(:hover) .remove-experience,
-main:not(:hover) .remove-education,
-main:not(:hover) .remove-skill,
-main:not(:hover) .remove-language,
-main:not(:hover) .add-experience,
-main:not(:hover) .add-education,
-main:not(:hover) .add-skill,
-main:not(:hover) .add-language {
+.experience-section:not(:hover) .remove-experience,
+.experience-section:not(:hover) .add-experience {
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-main:hover .remove-experience,
-main:hover .remove-education,
-main:hover .remove-skill,
-main:hover .remove-language,
-main:hover .add-experience,
-main:hover .add-education,
-main:hover .add-skill,
-main:hover .add-language {
+.experience-section:hover .remove-experience,
+.experience-section:hover .add-experience {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.education-section:not(:hover) .remove-education,
+.education-section:not(:hover) .add-education {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.education-section:hover .remove-education,
+.education-section:hover .add-education {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.skill-section:not(:hover) .remove-skill,
+.skill-section:not(:hover) .add-skill {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skill-section:hover .remove-skill,
+.skill-section:hover .add-skill {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.language-section:not(:hover) .remove-language,
+.language-section:not(:hover) .add-language {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.language-section:hover .remove-language,
+.language-section:hover .add-language {
   opacity: 1;
   transition: opacity 0.3s;
 }
