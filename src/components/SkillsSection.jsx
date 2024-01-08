@@ -18,7 +18,7 @@ export default function SkillsSection({
 
   return (
     <div className="skill-section">
-      <p>Skills</p>
+      <p>04 Skills</p>
       {skills.map((skill, index) => (
         <div key={skill.id} className="skill">
           <Input

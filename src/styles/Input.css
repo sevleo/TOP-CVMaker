@@ -4,12 +4,17 @@ textarea {
   border: none;
 }
 
-textarea {
+div.summary > textarea {
   resize: none;
-  /* overflow-y: hidden; */
   height: auto;
   min-height: 50;
   max-height: 150px;
+}
+
+div.experience textarea {
+  resize: none;
+  height: auto;
+  max-height: 600px;
 }
 
 div.name:hover,
@@ -33,11 +38,11 @@ div > label {
   color: rgb(92, 92, 92);
 }
 
-div.name > input {
+div.contact-section > div.name > input {
   font-size: 30px;
 }
 
-div.name > input::placeholder {
+div.contact-section > div.name > input::placeholder {
   font-size: 30px;
 }
 
@@ -50,7 +55,7 @@ div > input {
   display: flex;
   justify-content: start;
   padding: 5px;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
 
 div > textarea {
@@ -86,24 +91,45 @@ div.summary-section > div {
   position: relative;
 }
 
-div label {
+/* div label {
   position: absolute;
-  left: 5px;
+  left: -30px;
   top: 0px;
-  font-size: 9px;
+  font-size: 14px;
   transition: all 0.2s ease-in-out;
   animation: silo-fade 0.3s;
   font-style: italic;
-}
+} */
 
 div > input:focus + label,
 div > textarea:focus + label {
-  display: block;
+  display: none;
 }
 
 div > input:not(:focus) + label,
 div > textarea:not(:focus) + label {
   display: none;
+}
+
+div.experience-from,
+div.experience-to {
+  display: flex;
+  flex-direction: row;
+}
+
+div.experience-from > input + label,
+div.experience-to > input + label {
+  display: block;
+  order: 1;
+  padding: 5px;
+}
+
+div.experience-from > input,
+div.experience-to > input {
+  display: block;
+  order: 2;
+  /* border: 1px solid gray; */
+  width: 100px;
 }
 
 div > input:not(:placeholder-shown),
@@ -114,6 +140,11 @@ div > textarea:not(:placeholder-shown) {
 div > input:placeholder-shown::placeholder,
 div > textarea:placeholder-shown::placeholder {
   transition: all 0.2s ease-in-out;
+  color: rgba(165, 13, 13, 1);
+}
+
+div > input[type="date"][value=""],
+div > input[type="date"][value=""] + label {
   color: rgba(165, 13, 13, 1);
 }
 

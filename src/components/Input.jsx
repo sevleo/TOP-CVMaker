@@ -21,8 +21,7 @@ export default function Input({
   function handleTextAreaChange(e) {
     setFieldValue(e.target.value);
     onChange(e.target.value);
-    const textarea = document.querySelector(".summary textarea");
-    textarea.style.height = `${textarea.scrollHeight - 10}px`;
+    e.target.style.height = `${e.target.scrollHeight - 10}px`;
   }
 
   if (type === "textarea") {

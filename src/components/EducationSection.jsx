@@ -22,7 +22,7 @@ export default function EducationSection({
 
   return (
     <div className="education-section">
-      <p>Education</p>
+      <p>03 Education</p>
 
       {educations.map((education, index) => (
         <div key={education.id} className="education">

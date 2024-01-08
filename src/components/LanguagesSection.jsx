@@ -18,7 +18,7 @@ export default function LanguagesSection({
 
   return (
     <div className="language-section">
-      <p>Languages</p>
+      <p>05 Languages</p>
       {languages.map((language, index) => (
         <div key={language.id} className="language">
           <Input

@@ -23,3 +23,16 @@ div.linebreak {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.summary-section p,
+.experience-section p,
+.education-section p,
+.skill-section p,
+.language-section p {
+  font-weight: 500;
+  text-align: start;
+  padding: 5px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+}

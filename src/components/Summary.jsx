@@ -4,7 +4,7 @@ import "../styles/SummarySection.css";
 export default function Summary({ onFieldChange, summary }) {
   return (
     <div className="summary-section">
-      <p>Professional Summary</p>
+      <p>01 Professional Summary</p>
       <Input
         label="Summary"
         placeholder="Summary of your experience"

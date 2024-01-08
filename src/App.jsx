@@ -8,7 +8,7 @@ import SkillsSection from "./components/SkillsSection";
 import LanguagesSection from "./components/LanguagesSection";
 
 function App() {
-  const [profile, setProfile] = useState({
+  const defaultProfile = {
     name: "John Doe",
     role: "Software Engineer",
     phone: "+1234567890",
@@ -93,7 +93,52 @@ function App() {
         name: "French",
       },
     ],
-  });
+  };
+
+  const emptyProfile = {
+    name: "",
+    role: "",
+    phone: "",
+    email: "",
+    linkedin: "",
+    github: "",
+    summary: "",
+    experiences: [
+      {
+        id: Math.random(),
+        title: "",
+        company: "",
+        from: "",
+        to: "",
+        location: "",
+        responsibilities: "",
+      },
+    ],
+    educations: [
+      {
+        id: Math.random(),
+        degree: "",
+        school: "",
+        from: "",
+        to: "",
+        location: "",
+      },
+    ],
+    skills: [
+      {
+        id: Math.random(),
+        name: "",
+      },
+    ],
+    languages: [
+      {
+        id: Math.random(),
+        name: "",
+      },
+    ],
+  };
+
+  const [profile, setProfile] = useState(defaultProfile);
 
   const handleFieldChange = (field, value) => {
     setProfile((prevProfile) => ({

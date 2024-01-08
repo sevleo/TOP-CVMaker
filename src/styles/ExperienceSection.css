@@ -1,0 +1,43 @@
+.dates {
+  display: flex;
+  gap: 5px;
+  padding-left: 5px;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* gap: 5px; */
+  margin-bottom: 30px;
+}
+
+.experience-details {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+.remove-experience {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.experience-title-company-location {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  width: max-content;
+}
+
+.experience-title input {
+  width: 200px;
+}
+
+.experience-responsibilities {
+  padding: 5px;
+  width: 60%;
+}
