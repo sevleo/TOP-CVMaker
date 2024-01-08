@@ -26,45 +26,56 @@ export default function EducationSection({
 
       {educations.map((education, index) => (
         <div key={education.id} className="education">
-          <Input
-            label="Degree"
-            placeholder="Degree"
-            className="education degree"
-            value={education.degree}
-            onChange={(value) => onChange(index, "degree", value, "educations")}
-          />
-          <Input
-            label="School"
-            placeholder="School"
-            className="education school"
-            value={education.school}
-            onChange={(value) => onChange(index, "school", value, "educations")}
-          />
-          <Input
-            label="From"
-            placeholder="From"
-            className="education from"
-            type="date"
-            value={education.from}
-            onChange={(value) => onChange(index, "from", value, "educations")}
-          />
-          <Input
-            label="To"
-            placeholder="To"
-            className="education to"
-            type="date"
-            value={education.to}
-            onChange={(value) => onChange(index, "to", value, "educations")}
-          />
-          <Input
-            label="Location"
-            placeholder="Location"
-            className="education location"
-            value={education.location}
-            onChange={(value) =>
-              onChange(index, "location", value, "educations")
-            }
-          />
+          <div className="dates">
+            <Input
+              label="From"
+              placeholder="From"
+              className="education-from"
+              type="date"
+              value={education.from}
+              onChange={(value) => onChange(index, "from", value, "educations")}
+            />
+            <Input
+              label="To"
+              placeholder="To"
+              className="education-to"
+              type="date"
+              value={education.to}
+              onChange={(value) => onChange(index, "to", value, "educations")}
+            />
+          </div>
+          <div className="education-details">
+            <div className="education-degree-school-location">
+              <Input
+                label="Degree"
+                placeholder="Degree"
+                className="education-degree"
+                value={education.degree}
+                onChange={(value) =>
+                  onChange(index, "degree", value, "educations")
+                }
+              />
+              <Input
+                label="School"
+                placeholder="School"
+                className="education-school"
+                value={education.school}
+                onChange={(value) =>
+                  onChange(index, "school", value, "educations")
+                }
+              />
+
+              <Input
+                label="Location"
+                placeholder="Location"
+                className="education-location"
+                value={education.location}
+                onChange={(value) =>
+                  onChange(index, "location", value, "educations")
+                }
+              />
+            </div>
+          </div>
           <Button
             className="remove-education"
             onClick={() => removeItem("educations", education)}

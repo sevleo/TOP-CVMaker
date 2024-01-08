@@ -91,16 +91,6 @@ div.summary-section > div {
   position: relative;
 }
 
-/* div label {
-  position: absolute;
-  left: -30px;
-  top: 0px;
-  font-size: 14px;
-  transition: all 0.2s ease-in-out;
-  animation: silo-fade 0.3s;
-  font-style: italic;
-} */
-
 div > input:focus + label,
 div > textarea:focus + label {
   display: none;
@@ -112,20 +102,26 @@ div > textarea:not(:focus) + label {
 }
 
 div.experience-from,
-div.experience-to {
+div.experience-to,
+div.education-from,
+div.education-to {
   display: flex;
   flex-direction: row;
 }
 
 div.experience-from > input + label,
-div.experience-to > input + label {
+div.experience-to > input + label,
+div.education-from > input + label,
+div.education-to > input + label {
   display: block;
   order: 1;
   padding: 5px;
 }
 
 div.experience-from > input,
-div.experience-to > input {
+div.experience-to > input,
+div.education-from > input,
+div.education-to > input {
   display: block;
   order: 2;
   /* border: 1px solid gray; */
