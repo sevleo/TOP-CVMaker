@@ -36,3 +36,72 @@ div.linebreak {
   font-size: 18px;
   font-weight: 300;
 }
+
+.experience {
+  outline: 0.5px solid transparent;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.experience,
+.education,
+.skill,
+.language {
+  position: relative;
+}
+
+.experience:hover {
+  outline: 0.5px solid rgba(137, 137, 137, 0.4);
+}
+
+.remove-experience,
+.remove-education,
+.remove-skill,
+.remove-language {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  height: 30px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90px;
+}
+
+main:not(:hover) .remove-experience,
+main:not(:hover) .remove-education,
+main:not(:hover) .remove-skill,
+main:not(:hover) .remove-language,
+main:not(:hover) .add-experience,
+main:not(:hover) .add-education,
+main:not(:hover) .add-skill,
+main:not(:hover) .add-language {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+main:hover .remove-experience,
+main:hover .remove-education,
+main:hover .remove-skill,
+main:hover .remove-language,
+main:hover .add-experience,
+main:hover .add-education,
+main:hover .add-skill,
+main:hover .add-language {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+main .remove-experience:focus,
+main .remove-education:focus,
+main .remove-skill:focus,
+main .remove-language:focus,
+main .add-experience:focus,
+main .add-education:focus,
+main .add-skill:focus,
+main .add-language:focus {
+  opacity: 1;
+  transition: opacity 0.3s;
+}

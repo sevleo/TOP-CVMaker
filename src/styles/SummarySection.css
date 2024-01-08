@@ -12,3 +12,7 @@
 .summary-section div {
   border-radius: 5px;
 }
+
+.summary {
+  padding: 10px;
+}

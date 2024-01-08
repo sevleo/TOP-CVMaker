@@ -7,9 +7,8 @@
 .experience {
   display: flex;
   flex-direction: column;
-  position: relative;
-  /* gap: 5px; */
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .experience-details {
@@ -17,12 +16,6 @@
   flex-direction: row;
   gap: 5px;
   justify-content: space-between;
-}
-
-.remove-experience {
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 .experience-title-company-location {
