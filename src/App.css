@@ -8,6 +8,14 @@
   background-color: whitesmoke;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
 main {
   /* border: 1px solid; */
   padding: 20px;
@@ -84,6 +92,21 @@ div.linebreak {
   z-index: 1;
 }
 
+.remove-language {
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  height: 10px;
+  width: 10px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 .experience-section:not(:hover) .remove-experience,
 .experience-section:not(:hover) .add-experience {
   opacity: 0;
@@ -136,10 +159,10 @@ main .experience .remove-experience:focus,
 main .education .remove-education:focus,
 main .skill .remove-skill:focus,
 main .language .remove-language:focus,
-main .experience .add-experience:focus,
-main .education .add-education:focus,
-main .skill .add-skill:focus,
-main .language .add-language:focus {
+main .experience-section .add-experience:focus,
+main .education-section .add-education:focus,
+main .skill-section .add-skill:focus,
+main .language-section .add-language:focus {
   opacity: 1;
   transition: opacity 0.3s;
 }
