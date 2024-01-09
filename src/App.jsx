@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ContactSection from "./components/ContactSection";
 import "./App.css";
 import Summary from "./components/Summary";
@@ -7,6 +7,7 @@ import EducationSection from "./components/EducationSection";
 import SkillsSection from "./components/SkillsSection";
 import LanguagesSection from "./components/LanguagesSection";
 import Button from "./components/Button";
+import PreviewContainer from "./components/PreviewContainer";
 
 function App() {
   const defaultProfile = {
@@ -172,11 +173,25 @@ function App() {
     setProfile(updatedProfile);
   };
 
+  // Preview elements
+  const dialogRef = useRef(null);
+  const openDialog = () => {
+    dialogRef.current.showModal();
+  };
+  const closeDialog = () => {
+    dialogRef.current.close();
+  };
+
   return (
     <>
       <main>
+        <PreviewContainer dialogRef={dialogRef} closeDialog={closeDialog} />
         <div className="controls">
-          <Button label="preview" className="preview-button" />
+          <Button
+            label="preview"
+            className="preview-button"
+            onClick={openDialog}
+          />
         </div>
         <div className="form">
           <ContactSection onFieldChange={handleFieldChange} profile={profile} />

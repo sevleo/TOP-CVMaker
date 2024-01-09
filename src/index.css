@@ -61,6 +61,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+::backdrop {
+  background-color: #00000088;
+  backdrop-filter: blur(1px);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
