@@ -5,8 +5,8 @@
   text-align: center;
   width: 100vw;
   background-color: whitesmoke;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex; */
+  /* justify-content: space-around; */
 }
 
 .material-symbols-outlined {
@@ -18,6 +18,12 @@
 }
 
 main {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
   /* border: 1px solid; */
   padding: 20px;
   background-color: white;
@@ -156,14 +162,14 @@ div.linebreak {
   transition: opacity 0.3s;
 }
 
-main .experience .remove-experience:focus,
-main .education .remove-education:focus,
-main .skill .remove-skill:focus,
-main .language .remove-language:focus,
-main .experience-section .add-experience:focus,
-main .education-section .add-education:focus,
-main .skill-section .add-skill:focus,
-main .language-section .add-language:focus {
+.form .experience .remove-experience:focus,
+.form .education .remove-education:focus,
+.form .skill .remove-skill:focus,
+.form .language .remove-language:focus,
+.form .experience-section .add-experience:focus,
+.form .education-section .add-education:focus,
+.form .skill-section .add-skill:focus,
+.form .language-section .add-language:focus {
   opacity: 1;
   transition: opacity 0.3s;
 }

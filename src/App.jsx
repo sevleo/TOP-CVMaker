@@ -6,6 +6,7 @@ import ExperienceSection from "./components/ExperienceSection";
 import EducationSection from "./components/EducationSection";
 import SkillsSection from "./components/SkillsSection";
 import LanguagesSection from "./components/LanguagesSection";
+import Button from "./components/Button";
 
 function App() {
   const defaultProfile = {
@@ -174,7 +175,10 @@ function App() {
   return (
     <>
       <main>
-        <div>
+        <div className="controls">
+          <Button label="preview" className="preview-button" />
+        </div>
+        <div className="form">
           <ContactSection onFieldChange={handleFieldChange} profile={profile} />
           <div className="linebreak"></div>
           <Summary
