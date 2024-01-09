@@ -185,7 +185,11 @@ function App() {
   return (
     <>
       <main>
-        <PreviewContainer dialogRef={dialogRef} closeDialog={closeDialog} />
+        <PreviewContainer
+          dialogRef={dialogRef}
+          closeDialog={closeDialog}
+          profile={profile}
+        />
         <div className="controls">
           <Button
             label="preview"
