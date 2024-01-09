@@ -8,6 +8,8 @@ import SkillsSection from "./components/SkillsSection";
 import LanguagesSection from "./components/LanguagesSection";
 import Button from "./components/Button";
 import PreviewContainer from "./components/PreviewContainer";
+// import format from "./../node_modules/date-fns";
+// import html2pdf from "./../node_modules/html2pdf.js";
 
 function App() {
   const defaultProfile = {
@@ -177,9 +179,19 @@ function App() {
   const dialogRef = useRef(null);
   const openDialog = () => {
     dialogRef.current.showModal();
+    dialogRef.current.classList.add("on");
+    dialogRef.current.addEventListener("keydown", handleKeyDown);
   };
   const closeDialog = () => {
     dialogRef.current.close();
+    dialogRef.current.classList.remove("on");
+    dialogRef.current.removeEventListener("keydown", handleKeyDown);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      closeDialog();
+    }
   };
 
   return (
