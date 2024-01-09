@@ -211,21 +211,20 @@ form .experience:hover {
   height: 50px;
 }
 
-.cv .experience-details {
-  justify-content: space-between;
+.experience-details {
+  justify-content: start;
   align-items: start;
 }
 
-main .cv .experience-title-company-location {
-  min-width: 200px;
-}
-
 .experience-title-company-location {
+  min-width: 200px;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 5px;
-  width: max-content;
+  width: 200x;
+  margin-right: 100px;
 }
 
 @media screen and (max-width: 900px) {
