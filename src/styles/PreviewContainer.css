@@ -1,18 +1,29 @@
 .preview {
   width: 60vw;
+  max-width: 800px;
   position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40vh);
   border: none;
   padding: 20px;
   background-color: white;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.5);
   flex-direction: column;
   margin: 0;
+  /* height: min-content; */
+  max-height: none;
 }
 
 .preview.on {
   display: flex;
+}
+
+.preview-close {
+  position: absolute;
+}
+
+.preview-download {
+  position: absolute;
 }

@@ -13,7 +13,7 @@ export default function PreviewContainer({
         <Button label="close" className="preview-close" onClick={closeDialog} />
         <Button
           label="download"
-          className="download-close"
+          className="preview-download"
           onClick={downloadPdf}
         />
         <div className="cv">
@@ -28,7 +28,9 @@ export default function PreviewContainer({
           <div className="linebreak"></div>
           <div className="summary-section">
             <p>01 Professional Summary</p>
-            <div className="summary"></div>
+            {profile.summary && (
+              <div className="summary">{profile.summary}</div>
+            )}
           </div>
           <div className="linebreak"></div>
           <div className="experience-section">
