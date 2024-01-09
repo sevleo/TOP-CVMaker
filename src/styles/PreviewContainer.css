@@ -139,7 +139,7 @@ p {
     /* position: sticky; */
     /* left: 50px; */
     /* top: 2px; */
-    transform: translate(100%);
+    /* transform: translate(100%); */
   }
 
   .preview.on .preview-buttons > button {
