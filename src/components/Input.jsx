@@ -25,7 +25,9 @@ export default function Input({
   function handleTextAreaChange(e) {
     setFieldValue(e.target.value);
     onChange(e.target.value);
-    e.target.style.height = `${e.target.scrollHeight - 10}px`;
+    if (e.target.scrollHeight > 75) {
+      e.target.style.height = `${e.target.scrollHeight}px`;
+    }
   }
 
   if (type === "textarea") {
