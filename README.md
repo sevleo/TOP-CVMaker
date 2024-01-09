@@ -13,7 +13,7 @@ This app allows users to quickly draft a CV and export them into a PDF. I used t
 
 ## Demo
 
-You can play the game live at [CV App Demo](https://main--chimerical-hummingbird-a514f5.netlify.app).
+You can view the app at [CV App Demo](https://main--chimerical-hummingbird-a514f5.netlify.app).
 
 ![Home page screenshot](Screenshot.png)
 
