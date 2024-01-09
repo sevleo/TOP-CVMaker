@@ -8,8 +8,7 @@ import SkillsSection from "./components/SkillsSection";
 import LanguagesSection from "./components/LanguagesSection";
 import Button from "./components/Button";
 import PreviewContainer from "./components/PreviewContainer";
-// import format from "./../node_modules/date-fns";
-// import html2pdf from "./../node_modules/html2pdf.js";
+import html2pdf from "html2pdf.js";
 
 function App() {
   const defaultProfile = {
@@ -194,6 +193,19 @@ function App() {
     }
   };
 
+  const downloadPdf = () => {
+    const documentToPrint = document.querySelector(".cv");
+    const options = {
+      margin: 0.5,
+      filename: "cv.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    console.log(documentToPrint);
+    html2pdf().set(options).from(documentToPrint).save();
+  };
+
   return (
     <>
       <main>
@@ -201,6 +213,7 @@ function App() {
           dialogRef={dialogRef}
           closeDialog={closeDialog}
           profile={profile}
+          downloadPdf={downloadPdf}
         />
         <div className="controls">
           <Button
