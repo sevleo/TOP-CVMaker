@@ -174,37 +174,42 @@ function App() {
   return (
     <>
       <main>
-        <ContactSection onFieldChange={handleFieldChange} profile={profile} />
-        <div className="linebreak"></div>
-        <Summary onFieldChange={handleFieldChange} summary={profile.summary} />
-        <div className="linebreak"></div>
-        <ExperienceSection
-          experiences={profile.experiences}
-          addItem={addItem}
-          removeItem={removeItem}
-          onChange={handleListChange}
-        />
-        <div className="linebreak"></div>
-        <EducationSection
-          educations={profile.educations}
-          addItem={addItem}
-          removeItem={removeItem}
-          onChange={handleListChange}
-        />
-        <div className="linebreak"></div>
-        <SkillsSection
-          skills={profile.skills}
-          addItem={addItem}
-          removeItem={removeItem}
-          onChange={handleListChange}
-        />
-        <div className="linebreak"></div>
-        <LanguagesSection
-          languages={profile.languages}
-          addItem={addItem}
-          removeItem={removeItem}
-          onChange={handleListChange}
-        />
+        <div>
+          <ContactSection onFieldChange={handleFieldChange} profile={profile} />
+          <div className="linebreak"></div>
+          <Summary
+            onFieldChange={handleFieldChange}
+            summary={profile.summary}
+          />
+          <div className="linebreak"></div>
+          <ExperienceSection
+            experiences={profile.experiences}
+            addItem={addItem}
+            removeItem={removeItem}
+            onChange={handleListChange}
+          />
+          <div className="linebreak"></div>
+          <EducationSection
+            educations={profile.educations}
+            addItem={addItem}
+            removeItem={removeItem}
+            onChange={handleListChange}
+          />
+          <div className="linebreak"></div>
+          <SkillsSection
+            skills={profile.skills}
+            addItem={addItem}
+            removeItem={removeItem}
+            onChange={handleListChange}
+          />
+          <div className="linebreak"></div>
+          <LanguagesSection
+            languages={profile.languages}
+            addItem={addItem}
+            removeItem={removeItem}
+            onChange={handleListChange}
+          />
+        </div>
       </main>
     </>
   );

@@ -116,6 +116,7 @@ div.education-to > input + label {
   display: block;
   order: 1;
   padding: 5px;
+  color: black;
 }
 
 div.experience-from > input,
