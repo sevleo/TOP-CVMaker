@@ -126,7 +126,7 @@ div.education-to > input {
   display: block;
   order: 2;
   /* border: 1px solid gray; */
-  width: 100px;
+  width: 110px;
 }
 
 div > input:not(:placeholder-shown),

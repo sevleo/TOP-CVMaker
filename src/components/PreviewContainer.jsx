@@ -10,20 +10,27 @@ export default function PreviewContainer({
   return (
     <>
       <dialog className="preview" ref={dialogRef}>
-        <Button label="close" className="preview-close" onClick={closeDialog} />
-        <Button
-          label="download"
-          className="preview-download"
-          onClick={downloadPdf}
-        />
+        <div className="preview-buttons">
+          <Button
+            label="download"
+            className="preview-download"
+            onClick={downloadPdf}
+          />
+          <Button
+            label="close"
+            className="preview-close"
+            onClick={closeDialog}
+          />
+        </div>
+
         <div className="cv">
           <div className="contact-section">
-            <div className="name">{profile.name}</div>
-            <div className="role">{profile.role}</div>
-            <div className="phone">{profile.phone}</div>
-            <div className="email">{profile.email}</div>
-            <div className="linkedin">{profile.linkedin}</div>
-            <div className="github">{profile.github}</div>
+            <p className="name">{profile.name}</p>
+            <p className="role">{profile.role}</p>
+            <p className="phone">{profile.phone}</p>
+            <p className="email">{profile.email}</p>
+            <p className="linkedin">{profile.linkedin}</p>
+            <p className="github">{profile.github}</p>
           </div>
           <div className="linebreak"></div>
           <div className="summary-section">
@@ -82,20 +89,25 @@ export default function PreviewContainer({
           <div className="linebreak"></div>
           <div className="skill-section">
             <p>04 Skills</p>
-            {profile.skills.map((skill, index) => (
-              <div key={skill.id} className="skill">
-                {skill.name}
-              </div>
-            ))}
+            <div className="skills">
+              {profile.skills.map((skill, index) => (
+                <div key={skill.id} className="skill">
+                  {skill.name}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="linebreak"></div>
           <div className="language-section">
             <p>05 Languages</p>
-            {profile.languages.map((language, index) => (
-              <div key={language.id} className="language">
-                {language.name}
-              </div>
-            ))}
+            <div className="languages">
+              {" "}
+              {profile.languages.map((language, index) => (
+                <div key={language.id} className="language">
+                  {language.name}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </dialog>

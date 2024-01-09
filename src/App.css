@@ -53,6 +53,18 @@ div.linebreak {
   font-weight: 300;
 }
 
+.cv > .contact-section p.name {
+  font-size: 30px;
+  margin: 0px;
+  justify-self: start;
+}
+
+.cv > .contact-section p.role {
+  font-size: 20px;
+  margin: 0px;
+  justify-self: start;
+}
+
 .experience {
   outline: 0.5px solid transparent;
   border-radius: 5px;
@@ -66,7 +78,7 @@ div.linebreak {
   position: relative;
 }
 
-.experience:hover {
+form .experience:hover {
   outline: 0.5px solid rgba(137, 137, 137, 0.4);
 }
 
@@ -173,4 +185,22 @@ div.linebreak {
 .form .language-section .add-language:focus {
   opacity: 1;
   transition: opacity 0.3s;
+}
+
+.cv .skills,
+.cv .languages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  padding-left: 15px;
+  justify-content: flex-start;
+}
+
+.cv .skills .skill,
+.cv .languages .language {
+  text-align: start;
+  width: max-content;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
