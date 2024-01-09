@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Input.css";
 
 export default function Input({
@@ -13,16 +13,13 @@ export default function Input({
 }) {
   const [fieldValue, setFieldValue] = useState(value);
 
+  useEffect(() => {
+    setFieldValue(value);
+  }, [value]);
+
   function handleInputChange(e) {
     setFieldValue(e.target.value);
     onChange(e.target.value);
-    // console.log(e);
-    // if (
-    //   (e.target.parentElement.className === "skill-name") &
-    //   (e.target.value.length > 21)
-    // ) {
-    //   e.target.style.width = e.target.value.length + "ch";
-    // }
   }
 
   function handleTextAreaChange(e) {

@@ -141,7 +141,7 @@ function App() {
     ],
   };
 
-  const [profile, setProfile] = useState(defaultProfile);
+  const [profile, setProfile] = useState(emptyProfile);
 
   const handleFieldChange = (field, value) => {
     setProfile((prevProfile) => ({
@@ -206,6 +206,10 @@ function App() {
     html2pdf().set(options).from(documentToPrint).save();
   };
 
+  const fillMockData = () => {
+    setProfile(defaultProfile);
+  };
+
   return (
     <>
       <main>
@@ -220,6 +224,11 @@ function App() {
             label="preview"
             className="preview-button"
             onClick={openDialog}
+          />
+          <Button
+            label="fill mock data"
+            className="preview-button"
+            onClick={fillMockData}
           />
         </div>
         <div className="form">

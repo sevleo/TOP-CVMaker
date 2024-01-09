@@ -34,3 +34,15 @@
   padding: 5px;
   width: 60%;
 }
+
+@media screen and (max-width: 900px) {
+  .form .dates {
+    flex-direction: column;
+  }
+  .form .experience-details {
+    flex-direction: column;
+  }
+  .form .experience-details > div {
+    width: 100%;
+  }
+}
