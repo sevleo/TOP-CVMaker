@@ -36,7 +36,12 @@ export default function PreviewContainer({
           <div className="summary-section">
             <p>01 Professional Summary</p>
             {profile.summary && (
-              <div className="summary">{profile.summary}</div>
+              <div
+                className="summary"
+                dangerouslySetInnerHTML={{
+                  __html: profile.summary.replace(/\n/g, "<br>"),
+                }}
+              />
             )}
           </div>
           <div className="linebreak"></div>
@@ -58,9 +63,15 @@ export default function PreviewContainer({
                       {experience.location}
                     </div>
                   </div>
-                  <div className="responsibilities">
-                    {experience.responsibilities}
-                  </div>
+                  <div
+                    className="responsibilities"
+                    dangerouslySetInnerHTML={{
+                      __html: experience.responsibilities.replace(
+                        /\n/g,
+                        "<br>"
+                      ),
+                    }}
+                  ></div>
                 </div>
               </div>
             ))}

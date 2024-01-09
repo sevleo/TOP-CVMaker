@@ -68,13 +68,13 @@ main .cv .experience {
 }
 
 main .cv .experience-details {
-  justify-content: start;
+  /* justify-content: start; */
   gap: 50px;
 }
 
-main .cv .experience-title-company-location {
+/* main .cv .experience-title-company-location {
   min-width: 200px;
-}
+} */
 
 main .cv .education-degree-school-location {
   min-width: 200px;
@@ -113,6 +113,10 @@ main .cv .languages {
 p {
   margin: 0px;
   padding: 2px;
+}
+
+.cv .summary {
+  text-align: start;
 }
 
 @media screen and (max-width: 900px) {
