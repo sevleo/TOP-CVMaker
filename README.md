@@ -5,6 +5,7 @@ This app allows users to quickly draft a CV and export them into a PDF. I used t
 ## Table of Contents
 
 - [Demo](#demo)
+- [Technologies](#technologies-used)
 - [Features](#features)
 - [How to Use](#how-to-use)
 - [Known Issues](#known-issues)
@@ -16,6 +17,11 @@ This app allows users to quickly draft a CV and export them into a PDF. I used t
 You can view the app at [CV App Demo](https://main--chimerical-hummingbird-a514f5.netlify.app).
 
 ![Home page screenshot](Screenshot.png)
+
+## Technologies Used
+
+- React
+- Javascript
 
 ## Features
 
